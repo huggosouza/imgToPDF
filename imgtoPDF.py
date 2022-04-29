@@ -2,6 +2,8 @@ from PIL import Image
 import os
 import glob
 
+
+# Actually converts the images.
 def convertIMG(imgPath):
     image1 = Image.open(fr"{imgPath}")
     convertedIMG = image1.convert("RGB")
@@ -12,6 +14,7 @@ def convertIMG(imgPath):
 
 print("!!! Important !!! If you're not running the script in the exactly same directory the image is located, it's not gonna find the image, so you need to type the complete file path too.")
 
+# Deals with values.
 def howMany(value):
     pathes = []
     value+=1
@@ -27,6 +30,7 @@ def howMany(value):
             pathes.append(input(f"Type the path for the {i}th image: "))
     return pathes
 
+# Main function: get how many images user will convert and calls the convertIMG function only if finds the file.
 def main():
     imgList = []
     pathes = howMany(int(input("How many images do you want to convert? ")))
@@ -42,4 +46,3 @@ def main():
         print(f"File {img} converted to PDF.")
 
 main()
-# path = os.path.abspath(input("Type the image file name (don't forget the extension, .jpg for example): "))
