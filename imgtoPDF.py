@@ -1,7 +1,6 @@
-from PIL import Image
 import os
 import glob
-
+from PIL import Image
 
 # Actually converts the images.
 def convertIMG(imgPath):
